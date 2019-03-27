@@ -12,7 +12,13 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%A4%D0%B8%D0%B3%D1%83%D1%80%D0%B0_(%D0%B3%D0%B5%D0%BE%D0%BC%D0%B5%D1%82%D1%80%D0%B8%D1%8F)">Фигура (геометрия)</a>
  */
-public interface Shape {
+public interface Shape extends Point{//абстрактное представление о некой фигуре, у нее точно должен быть центр
+
+    float getArea();//возвращает площадь фигуры
+    default int getRotation(){ //возвращает угол поворота фигуры, работает у всех, но у круга возвращает значение 0
+    return 0;
+    }
+}
 
     /*
      * TODO: Закончить определение интерфейса 'Shape'
@@ -22,7 +28,7 @@ public interface Shape {
      * 2. При необходимости, дополните структуру интерфеса.
      */
 
-    /**
+    /**get area
      * Возвращает площадь фигуры.
      * <p>
      * Площадь плоской фигуры — аддитивная числовая
@@ -35,7 +41,6 @@ public interface Shape {
      *
      * @see <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D1%8C_%D1%84%D0%B8%D0%B3%D1%83%D1%80%D1%8B">Площадь фигуры</a>
      */
-    float getArea();
 
     /**
      * Возвращает угол поворота фигуры.
@@ -47,13 +52,10 @@ public interface Shape {
      * возвращает значение {@code 0}.
      *
      * @return угол поворота фигуры.
-     */
-    int getRotation();
-
     /*
      * TODO: изменить определение метотода 'getRotation()'
      * Измените определение метода таким образом, чтобы
      * классам, не поддерживающим вращение, не требовалось
      * переопределять данный метод.
      */
-}
+
