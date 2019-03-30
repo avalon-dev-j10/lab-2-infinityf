@@ -8,7 +8,7 @@ package ru.avalon.java.dev.j10.labs.shapes;
  *
  * @see <a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%BA%D1%80%D1%83%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C">Окружность</a>
  */
-public class Circle implements Shape{ //Ellipse{не требуется реализация методов интерфейса
+public class Circle implements Shape, Ellipse{
     private float x;
     private float y;
     private float radius;
@@ -47,12 +47,10 @@ public class Circle implements Shape{ //Ellipse{не требуется реал
         return area;
     }
      
-     /*убираю код - вроде бы, по заданию вычисление длины окружности не требуется, нужны только их площади. 
-     следовательно, не требуется и наследование метода getLength от Ellipse 
      public float getLength(){ //вычисляем длину окружности
         float length = radius * 2 * (int)Math.PI;
         return length;
-     }*/ 
+     }
 }
                 
                 
